@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //FetchAPI es un método integrado que requiere solo un parámetro: el punto final (URL de API). Si bien los argumentos adicionales no son necesarios para una solicitud GET, son muy beneficiosos para una solicitud POST HTTP.
+        //El segundo parámetro proporciona el cuerpo (datos a enviar) y el tipo de solicitud a realizar, mientras que el tercer parámetro es un encabezado que identifica el tipo de datos a transmitir, como JSON.
+        fetch("https://jsonplaceholder.typicode.com/todos", {
+            method: "POST",
+            //Los encabezados de solicitud especifican el tipo de contenido como application/json; charset=UTF-8. Este encabezado es necesario para que el servidor sepa en qué formato se envían los datos.
+            headers: { "Content-type": "application/json ; charset-UTF-8" }, 
+            //lista de tareas
+            body: JSON.stringify({ userId: 1, title: "Tareas a corregir", completed: false })
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+
+            //devuelve los json datos actualizados que envio al servidor
+            //id 201 exito
+    </script>
+</body>
+</html>
